@@ -5,8 +5,11 @@ function resolve(dir) {
 }
 
 module.exports = {
-    configureWebpack: config => {
-        config.resolve.alias
-            .set('@', resolve('src'))
-    }
+    configureWebpack: {
+        resolve: {
+          alias: {
+            '@': resolve('src')
+          }
+        }
+      },
 }
