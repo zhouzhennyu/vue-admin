@@ -9,6 +9,8 @@ import '@/styles/index.less'
 Vue.use(ElementUI);
 Vue.config.productionTip = false;
 
+import './permission'
+
 new Vue({
   router,
   store,

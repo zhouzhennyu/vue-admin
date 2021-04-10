@@ -1,12 +1,16 @@
 <template>
-    <div class="main-container">
+    <div class="app-wrapper">
         <sideBar />
-        <appMain />
+        <div class="main-container">
+            
+            <appMain />
+        </div>
+        
     </div>
 </template>
 <script>
-import sideBar from './components/sideBar';
-import appMain from './components/appMain';
+import sideBar from './components/SideBar/index';
+import appMain from './components/AppMain';
 export default {
     data() {
         return {
@@ -20,7 +24,7 @@ export default {
 }
 </script>
 <style lang="less" scope>
-    .main-container {
+    .app-wrapper {
         height: 100%;
     }
 </style>

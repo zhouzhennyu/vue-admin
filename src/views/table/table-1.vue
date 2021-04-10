@@ -1,16 +1,11 @@
 <template>
-    <div>
-        <h2>this is dashboard page</h2>
-        
+    <div class="app-container">
+        <h2>table-3</h2>
     </div>
 </template>
 <script>
 export default {
-    data() {
-        return {
-
-        }
-    }
+    
 }
 </script>
 <style lang="less" scope>

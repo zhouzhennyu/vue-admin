@@ -1,7 +1,9 @@
 <template>
     <div class="app-main-container">
-        <transition>
-            <router-view></router-view>
+        <transition name="fade-transform" mode="out-in">
+            <keep-alive>
+                <router-view></router-view>
+            </keep-alive>
         </transition>
     </div>
 </template>
