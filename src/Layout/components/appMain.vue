@@ -21,6 +21,6 @@ export default {
 </script>
 <style lang="less" scope>
     .app-main-container {
-        margin-left: 200px;
+        padding: 20px;
     }
 </style>

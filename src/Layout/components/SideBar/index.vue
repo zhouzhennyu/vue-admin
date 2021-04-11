@@ -9,7 +9,8 @@
             active-text-color="#1890ff"
             mode="vertical"
             :unique-opened="false"
-            :collapse-transition="false"
+            :collapse-transition="true"
+            :collapse="toggleMenu"
             @open="handleOpen"
             @close="handleClose">
             <sidebar-item 
@@ -38,7 +39,8 @@ export default {
     computed: {
         ...mapState({
             permissionRoute: state => state.permission.routes,
-            showSidebarLogo: state => state.setting.sideBarLogo
+            showSidebarLogo: state => state.setting.sideBarLogo,
+            toggleMenu: state => state.setting.sidebar.opened
         }),
         activeMenu() {
             return this.$route.path;

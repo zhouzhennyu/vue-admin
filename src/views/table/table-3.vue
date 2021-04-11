@@ -1,6 +1,6 @@
 <template>
     <div class="app-container">
-        <h2>table-1</h2>
+        <h2>table-3</h2>
     </div>
 </template>
 <script>

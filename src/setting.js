@@ -1,3 +1,3 @@
 module.exports = {
-    sideBarLogo: true
+    sideBarLogo: false
 }

@@ -20,7 +20,7 @@
                 :item="child" 
                 :basePath="resolvePath(child.path)"
             />
-        </el-submenu>
+        </el-submenu>   
     </div>
 </template>
 <script>
