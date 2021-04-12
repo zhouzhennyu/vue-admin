@@ -10,6 +10,7 @@ router.beforeEach((to, from, next) => {
     // to and from are both route objects. must call `next`.
     nProgress.start();
     store.dispatch('permission/generateRoutes');
+    
     next();
     NProgress.done();
 })

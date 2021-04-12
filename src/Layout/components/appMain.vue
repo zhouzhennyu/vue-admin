@@ -19,7 +19,7 @@ export default {
     }
 }
 </script>
-<style lang="less" scope>
+<style lang="less" scoped>
     .app-main-container {
         padding: 20px;
     }

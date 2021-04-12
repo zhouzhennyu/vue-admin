@@ -41,6 +41,13 @@ a:active {
     text-decoration: none;
 }
 
-.app-container {
-    // padding: 20px;
+.close-sidebar-container {
+    width: 64px !important;
+    .el-submenu__title > span {
+        width: 0;
+        height: 0;
+        visibility: hidden;
+        display: inline-block;
+        overflow: hidden;
+    }
 }

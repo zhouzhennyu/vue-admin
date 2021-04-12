@@ -18,7 +18,7 @@ export default {
     }
 }
 </script>
-<style lang="less" scope>
+<style lang="less" scoped>
     .sidebar-logo-container {
         width: 100%;
         height: 50px;

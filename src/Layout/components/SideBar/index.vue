@@ -1,15 +1,15 @@
 <template>
-    <div class="side-bar-container">
+    <div class="side-bar-container" :class="{'close-sidebar-container': toggleMenu}">
         <logo v-if="showSidebarLogo" />
         <el-menu
             :default-active="activeMenu"
-            class="side-bar-container"
+            class="el-menu-vertical-demo"
             background-color="#304156"
             text-color="#ffffff"
             active-text-color="#1890ff"
             mode="vertical"
             :unique-opened="false"
-            :collapse-transition="true"
+            :collapse-transition="false"
             :collapse="toggleMenu"
             @open="handleOpen"
             @close="handleClose">
@@ -58,7 +58,7 @@ export default {
     }
 }
 </script>
-<style lang="less" scope>
+<style lang="less" scoped>
     .side-bar-container {
         width: 200px;
         height: 100%;
@@ -68,5 +68,9 @@ export default {
         left: 0;
         bottom: 0;
         overflow: hidden;
+        transition: width 0.3s;
+        .el-menu {
+            border: none;
+        }
     }
 </style>
