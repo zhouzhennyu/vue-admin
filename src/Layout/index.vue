@@ -29,7 +29,6 @@ export default {
         })
     }
 }
-        NavBar
 </script>
 <style lang="less" scoped>
 .app-wrapper {

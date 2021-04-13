@@ -79,7 +79,6 @@ export default {
         }
     },
     created() {
-        console.log(666, this.item)
     }
 }
 </script>
