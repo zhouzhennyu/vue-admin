@@ -62,5 +62,6 @@ export default {
     }
     .user-container {
         float: right;
+        cursor: pointer;
     }
 </style>

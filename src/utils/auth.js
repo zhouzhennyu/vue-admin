@@ -5,8 +5,8 @@ const TokenKey = 'Admin-Token'
 
 //获取token
 export function getToken() {
-    return 'admin-token'
-    // return Cookies.get(TokenKey)
+    // return 'admin-token'
+    return Cookies.get(TokenKey)
 }
 
 //设置token

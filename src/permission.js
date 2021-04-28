@@ -8,9 +8,8 @@ import getPageTitle from '@/utils/getPageTitle';
 
 
 
-
+const whiteList = ['/login'];
 router.beforeEach((to, from, next) => {
-    // to and from are both route objects. must call `next`.
     nProgress.start();
     console.log('to:>>>', to);
     const hasToken = getToken();
@@ -24,8 +23,17 @@ router.beforeEach((to, from, next) => {
         }
 
     } else {
-        console.log('没有token');
+        if (whiteList.indexOf(to.path) !== -1) {
+            next()
+        } else {
+            next({ path: '/login' })
+            NProgress.done();
+        }
+        
     }
-    next();
     
+})
+
+router.afterEach(() => {
+    NProgress.done();
 })

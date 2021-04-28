@@ -7,6 +7,10 @@ Vue.use(VueRouter);
 
 export const constantRoutes = [
     {
+        path: '/login',
+        component: () => import("@/views/login/index")
+    },
+    {
         path: '/',
         component: Layout,
         redirect: '/dashboard',
@@ -14,7 +18,7 @@ export const constantRoutes = [
             {
                 path: 'dashboard',
                 name: 'Dashboard',
-                component: () => import(/* webpackChunkName: "about" */ "@/views/dashboard"),
+                component: () => import("@/views/dashboard"),
                 meta: { title: 'Dashboard', icon: 'dashboard'}
             }
         ],
@@ -26,7 +30,7 @@ export const constantRoutes = [
             {
                 path: 'index',
                 name: 'About',
-                component: () => import(/* webpackChunkName: "about" */ "@/views/about"),
+                component: () => import("@/views/about"),
                 meta: { title: 'About', icon: 'about'}
             }
         ]
@@ -41,19 +45,19 @@ export const constantRoutes = [
             {
                 path: 'table-1',
                 name: 'Table-1',
-                component: () => import(/* webpackChunkName: "table-1" */ "@/views/table/table-1"),
+                component: () => import("@/views/table/table-1"),
                 meta: { title: 'Tbale-1' }
             },
             {
                 path: 'table-2',
                 name: 'Table-2',
-                component: () => import(/* webpackChunkName: "table-2" */ "@/views/table/table-2"),
+                component: () => import("@/views/table/table-2"),
                 meta: { title: 'Tbale-2' }
             },
             {
                 path: 'table-3',
                 name: 'Table-3',
-                component: () => import(/* webpackChunkName: "table-3" */ "@/views/table/table-3"),
+                component: () => import("@/views/table/table-3"),
                 meta: { title: 'Tbale-3' }
             }
         ]
