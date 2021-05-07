@@ -15,7 +15,7 @@
                 <el-input type="password" v-model="formInfo.pass" autocomplete="off"></el-input>
             </el-form-item>
             <el-form-item>
-                <el-button 
+                <el-button
                     class="login-btn" 
                     type="primary"
                     :loading="loading"
@@ -25,6 +25,7 @@
     </div>
 </template>
 <script>
+import { setToken } from '@/utils/auth.js';
 export default {
     data() {
         const validateUser = (rule, value, callback) => {
@@ -61,9 +62,14 @@ export default {
                 if (valid) {
                     this.loading = true;
                     console.log('校验成功', this.formInfo);
+                    const token = this.formInfo.user === 'admin' ? 'admin-token' : 'user-token'
+                    const roles = this.formInfo.user === 'admin' ? ['admin'] : ['user'];
+                    setToken(token);
                     setTimeout(() => {
+                        this.$router.push({ path: '/' });
+                        this.$store.commit('user/SET_ROLES', roles);
                         this.loading = false;
-                    }, 300)
+                    }, 200)
                 } else {
                     console.log('校验失败');
                     return false;

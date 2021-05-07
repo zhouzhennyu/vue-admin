@@ -3,6 +3,7 @@ import { getToken } from "@/utils/auth";
 const state = {
     token: getToken(),
     name: '',
+    roles: []
 }
 
 const mutations = {
@@ -11,6 +12,9 @@ const mutations = {
     },
     SET_NAME: (state, data) => {
         state.name = data;
+    },
+    SET_ROLES: (state, data) => {
+        state.roles = data;
     }
 }
 

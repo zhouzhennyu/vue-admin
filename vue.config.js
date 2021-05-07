@@ -6,6 +6,7 @@ function resolve(dir) {
 
 module.exports = {
     configureWebpack: {
+        devtool: 'inline-source-map',
         resolve: {
           alias: {
             '@': resolve('src')

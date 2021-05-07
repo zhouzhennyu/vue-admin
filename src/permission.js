@@ -20,6 +20,9 @@ router.beforeEach((to, from, next) => {
         if(to.path === '/login') {
             next({ path: '/'})
             NProgress.done();
+        } else {
+            next();
+            
         }
 
     } else {
