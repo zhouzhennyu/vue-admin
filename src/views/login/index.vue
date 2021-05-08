@@ -25,7 +25,6 @@
     </div>
 </template>
 <script>
-import { setToken } from '@/utils/auth.js';
 export default {
     data() {
         const validateUser = (rule, value, callback) => {
@@ -62,14 +61,14 @@ export default {
                 if (valid) {
                     this.loading = true;
                     console.log('校验成功', this.formInfo);
-                    const token = this.formInfo.user === 'admin' ? 'admin-token' : 'user-token'
-                    const roles = this.formInfo.user === 'admin' ? ['admin'] : ['user'];
-                    setToken(token);
-                    setTimeout(() => {
-                        this.$router.push({ path: '/' });
-                        this.$store.commit('user/SET_ROLES', roles);
+                    this.$store.dispatch('user/login', this.formInfo)
+                    .then(() => {
                         this.loading = false;
-                    }, 200)
+                        this.$router.push({ path: '/' })
+                    })
+                    .catch(() => {
+                        this.loading = false;
+                    })
                 } else {
                     console.log('校验失败');
                     return false;

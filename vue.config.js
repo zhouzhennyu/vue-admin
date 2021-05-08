@@ -8,9 +8,13 @@ module.exports = {
     configureWebpack: {
         devtool: 'inline-source-map',
         resolve: {
-          alias: {
-            '@': resolve('src')
-          }
+            alias: {
+                '@': resolve('src')
+            }
         }
-      },
+    },
+    devServer: {
+        port: '8086',
+        before: require('./mock/mock-server.js')
+    }
 }
