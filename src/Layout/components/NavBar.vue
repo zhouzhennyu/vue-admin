@@ -10,9 +10,7 @@
                     zhouzhenyu<i class="el-icon-arrow-down el-icon--right"></i>
                 </span>
                 <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item>黄金糕</el-dropdown-item>
-                    <el-dropdown-item>狮子头</el-dropdown-item>
-                    <el-dropdown-item>螺蛳粉</el-dropdown-item>
+                    <el-dropdown-item @click.native="logout">退出登录</el-dropdown-item>
                 </el-dropdown-menu>
             </el-dropdown>
         </div>
@@ -37,7 +35,13 @@ export default {
     },
     methods: {
         handleCollapse() {
-            this.$store.dispatch('setting/toggleSideBar')
+            this.$store.dispatch('setting/toggleSideBar');
+        },
+        // 退出登录
+        async logout() {
+            console.log(1111111, this.$route.fullPath);
+            await this.$store.dispatch('user/logout');
+            this.$router.push(`/login`);
         }
     }
 }

@@ -63,6 +63,35 @@ export const constantRoutes = [
         ]
     }
 ];
+export const asyncRoutes = [
+    {
+        path: '/permision',
+        redirect: '/permision/page',
+        component: Layout,
+        name: 'Permission',
+        meta: { title: 'Permission', role: ['admin', 'editor'] },
+        children: [
+            {
+                path: '/permision/page',
+                name: 'PagePermission',
+                component: () => import('@/views/permision/page'),
+                meta: { title: 'Permission', role: ['admin'] },
+            },
+            {
+                path: '/permision/role',
+                name: 'DirectivePermission',
+                component: () => import('@/views/permision/role'),
+                meta: { title: 'Role Permission', role: ['admin'] },
+            },
+            {
+                path: '/permision/directive',
+                name: 'RolePermission',
+                component: () => import('@/views/permision/directive'),
+                meta: { title: 'Directive Permission' },
+            }
+        ]
+    }
+]
 
 const router = new VueRouter({
     routes: constantRoutes
